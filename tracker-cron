@@ -1,0 +1,1 @@
+1 * * * * root /usr/src/app/db_sync.sh > /dev/null 
