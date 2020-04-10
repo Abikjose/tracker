@@ -2,9 +2,18 @@ FROM ubuntu:16.04
 WORKDIR /usr/src/app
 COPY requirements.txt ./
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    software-properties-common \
+     && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+RUN add-apt-repository ppa:deadsnakes/ppa -y
+RUN apt-get update && apt-get install -y --no-install-recommends \
     python3.6 \
-    python3-pip \
+    python3.6-dev \
+    libmysqlclient-dev \
+    python3-distutils \
     cron \
+    curl \
+    gcc\
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 RUN pip3 install -r requirements.txt
