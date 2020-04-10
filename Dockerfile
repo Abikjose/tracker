@@ -27,8 +27,6 @@ RUN touch /var/log/cron.log
 #RUN echo "* * * * * root /bin/bash /usr/src/app/db_sync.sh >> /var/log/cron.log" >> /etc/crontab 
 RUN /etc/init.d/cron start
 RUN aws/install
-COPY .aws /root/.aws 
-
 
 EXPOSE 8000
 CMD ["python3.6", "manage.py", "runserver", "0.0.0.0:8000"]
