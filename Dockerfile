@@ -9,6 +9,7 @@ RUN add-apt-repository ppa:deadsnakes/ppa -y
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3.6 \
     python3.6-dev \
+    python3-pip \
     libmysqlclient-dev \
     python3-distutils \
     cron \
