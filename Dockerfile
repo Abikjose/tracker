@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 WORKDIR /usr/src/app
 COPY requirements.txt ./
 RUN apt-get update && apt-get install -y --no-install-recommends \
